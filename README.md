@@ -102,7 +102,7 @@ Run all project modules from the repository root with `PYTHONPATH=src`.
 | 1 | Corpus and ground truth | Done | `world.py`, `corpus_gen.py`, `llm.py` | No single document answers a cross-document question; the documents read like real ones |
 | 2 | Baseline RAG | Done | Shared chunking, embeddings, Chroma index, answer step | Simple questions pass; multi-hop questions fail |
 | 3 | Evaluation harness | Done | Question runner, Claude judge, report by question shape | Baseline scored by shape; some judgements checked by hand |
-| 4 | Knowledge graph | Built | Entity and relation extraction, alias resolution, Neo4j load | A planted chain can be followed in Neo4j Browser and in Cypher |
+| 4 | Knowledge graph | Done | Entity and relation extraction, alias resolution, Neo4j load | A planted chain can be followed in Neo4j Browser and in Cypher |
 | 5 | Communities | Planned | Louvain communities, community reports | Each report describes a real cluster (a team, a vendor problem) |
 | 6 | GraphRAG retrieval | Planned | Local search (graph hops), global search (map-reduce over reports) | Phase 3 failures now pass |
 | 7 | Comparison | Planned | All systems through the harness, `FINDINGS.md` | Scores by shape, plus cost and latency |
