@@ -1,0 +1,42 @@
+# Neo4j for the GraphRAG lab.
+#
+# Start:   docker compose up -d
+# Browser: http://localhost:7474   (user neo4j, password from NEO4J_PASSWORD)
+# Stop:    docker compose down          (keeps the data)
+# Wipe:    docker compose down -v       (deletes the graph - see NOTE below)
+#
+# NOTE: NEO4J_AUTH is read only when the data volume is empty. Changing the
+# password later has no effect until you run `docker compose down -v`.
+
+services:
+  neo4j:
+    image: neo4j:2026.10.1
+    container_name: graphrag-neo4j
+    ports:
+      - "7474:7474"   # HTTP - Neo4j Browser
+      - "7687:7687"   # Bolt - the Python driver
+    environment:
+      # Password comes from .env, which git ignores. Keep it the same as
+      # NEO4J_PASSWORD there, or the driver cannot sign in.
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?set NEO4J_PASSWORD in .env}
+      # Same value again, under a non-NEO4J_ name, only so the healthcheck
+      # below can read it. Neo4j maps NEO4J_* vars to config settings, so a
+      # bare NEO4J_PASSWORD there would log an unknown-setting warning.
+      HEALTH_PASSWORD: ${NEO4J_PASSWORD}
+      # 16 GB machine. These two values leave room for the embedding model.
+      NEO4J_server_memory_heap_max__size: 2G
+      NEO4J_server_memory_pagecache_size: 1G
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      # cypher-shell proves Bolt answers and the credentials work, which a port
+      # check does not. Neo4j needs ~20 s to accept connections on a cold start.
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p $$HEALTH_PASSWORD 'RETURN 1' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+    restart: unless-stopped
+
+volumes:
+  neo4j_data:

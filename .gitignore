@@ -1,0 +1,48 @@
+# --- secrets -----------------------------------------------------------------
+# Never commit. Holds ANTHROPIC_API_KEY and the Neo4j password.
+.env
+.env.*
+!.env.example
+
+# --- python ------------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- generated data ----------------------------------------------------------
+# Indexes, caches and raw LLM output. All reproducible from the corpus,
+# all large, none worth versioning.
+data/
+!data/.gitkeep
+
+# --- eval output -------------------------------------------------------------
+# Raw per-question results (jsonl) and the token/cost ledger. Regenerated on
+# every run. The written-up FINDINGS.md IS tracked - it is the deliverable.
+results/
+!results/.gitkeep
+*.jsonl
+
+# --- notebooks ---------------------------------------------------------------
+.ipynb_checkpoints/
+
+# --- tooling / editors -------------------------------------------------------
+.idea/
+.vscode/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# --- macos -------------------------------------------------------------------
+.DS_Store
+
+# --- logs --------------------------------------------------------------------
+*.log
+
+# NOTE: corpus/ is deliberately NOT ignored. The synthetic corpus and
+# ground_truth.yaml are the experiment's fixtures - they must be versioned so a
+# result stays reproducible and so corpus edits show up as diffs.

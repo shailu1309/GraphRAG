@@ -1,0 +1,698 @@
+company: Kestrel Telecom
+entities:
+- id: kestrel
+  name: Kestrel Telecom
+  type: organization
+  aliases: []
+- id: maya_okafor
+  name: Maya Okafor
+  type: person
+  aliases:
+  - M. Okafor
+- id: daniel_reyes
+  name: Daniel Reyes
+  type: person
+  aliases:
+  - Dan Reyes
+- id: wei_lin
+  name: Wei Lin
+  type: person
+  aliases:
+  - W. Lin
+  - Lin
+- id: sofia_marchetti
+  name: Sofia Marchetti
+  type: person
+  aliases: []
+- id: tom_becker
+  name: Tom Becker
+  type: person
+  aliases: []
+- id: aisha_rahman
+  name: Aisha Rahman
+  type: person
+  aliases: []
+- id: grace_kim
+  name: Grace Kim
+  type: person
+  aliases: []
+- id: luis_ortega
+  name: Luis Ortega
+  type: person
+  aliases: []
+- id: billing_support
+  name: Billing Support
+  type: team
+  aliases: []
+- id: network_escalations
+  name: Network Escalations
+  type: team
+  aliases: []
+- id: tech_support_t1
+  name: Tier 1 Technical Support
+  type: team
+  aliases: []
+- id: tech_support_t2
+  name: Tier 2 Technical Support
+  type: team
+  aliases: []
+- id: retention
+  name: Retention
+  type: team
+  aliases: []
+- id: quality_assurance
+  name: Quality Assurance
+  type: team
+  aliases: []
+- id: workforce_mgmt
+  name: Workforce Management
+  type: team
+  aliases: []
+- id: cx_platforms
+  name: CX Platforms
+  type: team
+  aliases: []
+- id: q_network
+  name: NETESC queue
+  type: queue
+  aliases: []
+- id: q_billing
+  name: BILL queue
+  type: queue
+  aliases: []
+- id: q_tier1
+  name: TECH-1 queue
+  type: queue
+  aliases: []
+- id: q_retention
+  name: SAVE queue
+  type: queue
+  aliases: []
+- id: switchboard
+  name: Switchboard
+  type: system
+  aliases:
+  - Switchboard IVR
+- id: switchboard_lite
+  name: Switchboard Lite
+  type: system
+  aliases: []
+- id: relay_crm
+  name: Relay CRM
+  type: system
+  aliases:
+  - Relay
+- id: beacon_kb
+  name: Beacon
+  type: system
+  aliases:
+  - Beacon knowledge base
+- id: pulse_wfm
+  name: Pulse
+  type: system
+  aliases: []
+- id: voxroute
+  name: VoxRoute
+  type: vendor
+  aliases: []
+- id: corvane
+  name: Corvane Systems
+  type: vendor
+  aliases:
+  - Corvane
+- id: shiftwise
+  name: ShiftWise
+  type: vendor
+  aliases: []
+- id: telvio
+  name: Telvio
+  type: vendor
+  aliases: []
+- id: inc_0312
+  name: INC-0312
+  type: incident
+  aliases:
+  - March 2026 fibre outage
+- id: inc_0407
+  name: INC-0407
+  type: incident
+  aliases:
+  - April 2026 double-charge incident
+- id: clearline
+  name: Project Clearline
+  type: project
+  aliases: []
+- id: clearview
+  name: Project Clearview
+  type: project
+  aliases: []
+- id: keystone
+  name: Project Keystone
+  type: project
+  aliases: []
+- id: winback
+  name: Win-back campaign
+  type: project
+  aliases: []
+- id: outdated_kb
+  name: outdated knowledge-base articles
+  type: issue
+  aliases: []
+- id: monday_understaffing
+  name: Monday-morning understaffing
+  type: issue
+  aliases: []
+- id: callback_failures
+  name: IVR callback failures
+  type: issue
+  aliases: []
+- id: overage_charges
+  name: vendor overage charges
+  type: issue
+  aliases: []
+facts:
+- id: f01
+  subject: daniel_reyes
+  predicate: leads
+  object: billing_support
+  text: Dan Reyes leads the Billing Support team.
+  doc_id: team_billing_support
+- id: f02
+  subject: wei_lin
+  predicate: leads
+  object: network_escalations
+  text: Wei Lin leads the Network Escalations team.
+  doc_id: team_network_escalations
+- id: f03
+  subject: luis_ortega
+  predicate: leads
+  object: tech_support_t2
+  text: Luis Ortega leads Tier 2 Technical Support.
+  doc_id: team_technical_support
+- id: f04
+  subject: aisha_rahman
+  predicate: leads
+  object: retention
+  text: Aisha Rahman leads the Retention team.
+  doc_id: team_retention
+- id: f05
+  subject: tom_becker
+  predicate: leads
+  object: quality_assurance
+  text: Tom Becker leads Quality Assurance.
+  doc_id: review_qa_q1
+- id: f06
+  subject: sofia_marchetti
+  predicate: leads
+  object: workforce_mgmt
+  text: Sofia Marchetti manages Workforce Management.
+  doc_id: plan_workforce_q2
+- id: f07
+  subject: maya_okafor
+  predicate: heads_customer_operations_at
+  object: kestrel
+  text: M. Okafor, Head of Customer Operations, chaired the February review.
+  doc_id: review_2026_02
+- id: f08
+  subject: grace_kim
+  predicate: leads
+  object: cx_platforms
+  text: Grace Kim leads CX Platforms, the team that owns the vendor contracts.
+  doc_id: contract_corvane
+- id: f10
+  subject: network_escalations
+  predicate: manages
+  object: q_network
+  text: The Network Escalations team manages the NETESC queue.
+  doc_id: team_network_escalations
+- id: f11
+  subject: q_network
+  predicate: routed_by
+  object: switchboard
+  text: Calls reach the NETESC queue through the Switchboard IVR.
+  doc_id: runbook_netesc_queue
+- id: f12
+  subject: q_billing
+  predicate: routed_by
+  object: switchboard
+  text: The Switchboard IVR routes calls to the BILL queue.
+  doc_id: runbook_bill_tech1_routing
+- id: f13
+  subject: q_tier1
+  predicate: routed_by
+  object: switchboard
+  text: The Switchboard IVR routes calls to the TECH-1 queue.
+  doc_id: runbook_bill_tech1_routing
+- id: f14
+  subject: q_retention
+  predicate: routed_by
+  object: switchboard_lite
+  text: The SAVE queue still runs on Switchboard Lite, the legacy in-house IVR.
+  doc_id: runbook_save_queue
+- id: f15
+  subject: billing_support
+  predicate: manages
+  object: q_billing
+  text: Billing Support agents answer the BILL queue.
+  doc_id: team_billing_support
+- id: f16
+  subject: retention
+  predicate: manages
+  object: q_retention
+  text: The Retention team answers the SAVE queue.
+  doc_id: team_retention
+- id: f17
+  subject: tech_support_t1
+  predicate: manages
+  object: q_tier1
+  text: Tier 1 Technical Support answers the TECH-1 queue.
+  doc_id: team_technical_support
+- id: f20
+  subject: voxroute
+  predicate: supplies
+  object: switchboard
+  text: VoxRoute supplies the Switchboard IVR.
+  doc_id: contract_voxroute
+- id: f21
+  subject: corvane
+  predicate: supplies
+  object: relay_crm
+  text: Corvane Systems supplies the Relay CRM.
+  doc_id: contract_corvane
+- id: f22
+  subject: shiftwise
+  predicate: supplies
+  object: pulse_wfm
+  text: ShiftWise supplies Pulse, the workforce scheduling tool.
+  doc_id: contract_shiftwise
+- id: f23
+  subject: telvio
+  predicate: takes_overflow_from
+  object: q_tier1
+  text: Telvio, an outsourced partner, takes overflow calls from the TECH-1 queue.
+  doc_id: team_technical_support
+- id: f24
+  subject: grace_kim
+  predicate: manages_contract_with
+  object: voxroute
+  text: Grace Kim manages the VoxRoute contract.
+  doc_id: contract_voxroute
+- id: f30
+  subject: wei_lin
+  predicate: led_review_of
+  object: inc_0312
+  text: W. Lin led the post-incident review of INC-0312, the March 2026 fibre outage.
+  doc_id: incident_inc_0312
+- id: f31
+  subject: inc_0312
+  predicate: caused
+  object: callback_failures
+  text: During INC-0312, IVR callback requests failed, so many customers called again.
+  doc_id: incident_inc_0312
+- id: f32
+  subject: relay_crm
+  predicate: caused
+  object: inc_0407
+  text: A sync bug in the Relay CRM caused INC-0407, the April 2026 double-charge incident.
+  doc_id: incident_inc_0407
+- id: f33
+  subject: billing_support
+  predicate: handled
+  object: inc_0407
+  text: The Billing Support team handled the customer contacts from INC-0407.
+  doc_id: incident_inc_0407
+- id: f34
+  subject: inc_0407
+  predicate: impact
+  object: null
+  text: INC-0407 charged about 4,200 customers twice for their March bill.
+  doc_id: incident_inc_0407
+- id: f40
+  subject: clearline
+  predicate: upgrades
+  object: switchboard
+  text: Project Clearline upgrades the Switchboard IVR to version 2.
+  doc_id: charter_clearline
+- id: f41
+  subject: grace_kim
+  predicate: owns
+  object: clearline
+  text: Grace Kim owns Project Clearline.
+  doc_id: charter_clearline
+- id: f42
+  subject: clearview
+  predicate: depends_on
+  object: relay_crm
+  text: Project Clearview depends on the Relay CRM for statement data.
+  doc_id: charter_clearview
+- id: f43
+  subject: daniel_reyes
+  predicate: owns
+  object: clearview
+  text: Daniel Reyes owns Project Clearview.
+  doc_id: charter_clearview
+- id: f44
+  subject: clearview
+  predicate: objective
+  object: null
+  text: The objective of Project Clearview is to redesign customer bills so that 30% fewer customers call
+    about charges they do not understand.
+  doc_id: charter_clearview
+- id: f45
+  subject: keystone
+  predicate: depends_on
+  object: beacon_kb
+  text: Project Keystone, a support chatbot, answers questions from the Beacon knowledge base.
+  doc_id: charter_keystone
+- id: f46
+  subject: keystone
+  predicate: depends_on
+  object: relay_crm
+  text: Project Keystone reads customer account data from the Relay CRM.
+  doc_id: charter_keystone
+- id: f47
+  subject: luis_ortega
+  predicate: owns
+  object: keystone
+  text: Luis Ortega owns Project Keystone.
+  doc_id: charter_keystone
+- id: f48
+  subject: winback
+  predicate: depends_on
+  object: relay_crm
+  text: The Win-back campaign pulls lapsed-customer lists from the Relay CRM.
+  doc_id: team_retention
+- id: f49
+  subject: aisha_rahman
+  predicate: runs
+  object: winback
+  text: Aisha Rahman runs the Win-back campaign.
+  doc_id: team_retention
+- id: f55
+  subject: workforce_mgmt
+  predicate: uses
+  object: pulse_wfm
+  text: Workforce Management schedules agents with Pulse.
+  doc_id: plan_workforce_q2
+- id: f60
+  subject: wei_lin
+  predicate: previously_in
+  object: tech_support_t2
+  text: Before the promotion, Lin was a senior agent in Tier 2 Technical Support.
+  doc_id: announcement_wei_lin
+- id: f61
+  subject: wei_lin
+  predicate: promoted
+  object: null
+  text: Wei Lin was promoted to lead Network Escalations in January 2026.
+  doc_id: announcement_wei_lin
+- id: f62
+  subject: wei_lin
+  predicate: trained
+  object: tech_support_t1
+  text: W. Lin ran the escalation-handling training for Tier 1 agents in Q1.
+  doc_id: review_qa_q1
+- id: f63
+  subject: wei_lin
+  predicate: reported_on
+  object: q_network
+  text: Wei Lin reported that NETESC handle time fell by 12% in April.
+  doc_id: review_2026_05
+- id: f70
+  subject: quality_assurance
+  predicate: found
+  object: outdated_kb
+  text: Quality Assurance found that outdated Beacon articles caused 18% of repeat contacts in Q1.
+  doc_id: review_qa_q1
+- id: f71
+  subject: q_tier1
+  predicate: affected_by
+  object: outdated_kb
+  text: In February, TECH-1 agents reported that Beacon articles about the new router were out of date,
+    which led to repeat calls.
+  doc_id: review_2026_02
+- id: f72
+  subject: outdated_kb
+  predicate: top_cause_in
+  object: null
+  text: Outdated knowledge-base articles were again a top cause of escalations in April.
+  doc_id: review_2026_05
+- id: f73
+  subject: kestrel
+  predicate: affected_by
+  object: monday_understaffing
+  text: The contact centre was understaffed on Monday mornings in February, and the service level fell
+    to 61%.
+  doc_id: review_2026_02
+- id: f74
+  subject: pulse_wfm
+  predicate: causes
+  object: monday_understaffing
+  text: Sofia Marchetti says Pulse forecasts underestimate Monday-morning demand.
+  doc_id: plan_workforce_q2
+- id: f75
+  subject: telvio
+  predicate: covered
+  object: monday_understaffing
+  text: Monday-morning understaffing continued in April, and Telvio took the overflow.
+  doc_id: review_2026_05
+- id: f76
+  subject: q_network
+  predicate: affected_by
+  object: callback_failures
+  text: When an IVR callback fails, NETESC agents must log the case by hand.
+  doc_id: runbook_netesc_queue
+- id: f80
+  subject: voxroute
+  predicate: has_issue
+  object: overage_charges
+  text: The VoxRoute contract ran 22% over budget because of per-minute overage charges.
+  doc_id: contract_voxroute
+- id: f81
+  subject: corvane
+  predicate: has_issue
+  object: overage_charges
+  text: Corvane Systems billed seat overage charges, and the Relay CRM contract ran 15% over budget.
+  doc_id: contract_corvane
+- id: f82
+  subject: shiftwise
+  predicate: has_issue
+  object: overage_charges
+  text: ShiftWise added overage charges for extra Pulse forecasting runs.
+  doc_id: contract_shiftwise
+- id: f83
+  subject: maya_okafor
+  predicate: requested_review_of
+  object: overage_charges
+  text: Maya Okafor asked CX Platforms to review every vendor overage clause.
+  doc_id: review_2026_05
+questions:
+- id: q_local_1
+  shape: local_factual
+  question: What is the objective of Project Clearview?
+  answer: To redesign customer bills so that 30% fewer customers call about charges they do not understand.
+  fact_ids:
+  - f44
+  atomic_facts:
+  - The objective of Project Clearview is to redesign customer bills so that 30% fewer customers call
+    about charges they do not understand.
+  required_docs:
+  - charter_clearview
+- id: q_local_2
+  shape: local_factual
+  question: Who owns Project Clearline, and what does it upgrade?
+  answer: Grace Kim owns it. It upgrades the Switchboard IVR to version 2.
+  fact_ids:
+  - f40
+  - f41
+  atomic_facts:
+  - Project Clearline upgrades the Switchboard IVR to version 2.
+  - Grace Kim owns Project Clearline.
+  required_docs:
+  - charter_clearline
+- id: q_multi_1
+  shape: multi_hop
+  question: Which vendor supplies the IVR that routes calls to the queue managed by the team whose lead
+    ran the INC-0312 review?
+  answer: VoxRoute. Wei Lin led the INC-0312 review and leads Network Escalations, which manages the NETESC
+    queue; Switchboard routes NETESC, and VoxRoute supplies Switchboard.
+  fact_ids:
+  - f30
+  - f02
+  - f10
+  - f11
+  - f20
+  atomic_facts:
+  - W. Lin led the post-incident review of INC-0312, the March 2026 fibre outage.
+  - Wei Lin leads the Network Escalations team.
+  - The Network Escalations team manages the NETESC queue.
+  - Calls reach the NETESC queue through the Switchboard IVR.
+  - VoxRoute supplies the Switchboard IVR.
+  required_docs:
+  - contract_voxroute
+  - incident_inc_0312
+  - runbook_netesc_queue
+  - team_network_escalations
+- id: q_multi_2
+  shape: multi_hop
+  question: Who leads the team that handled the incident caused by the CRM that Corvane Systems supplies?
+  answer: Daniel (Dan) Reyes. Corvane supplies Relay CRM, a Relay sync bug caused INC-0407, Billing Support
+    handled it, and Dan Reyes leads Billing Support.
+  fact_ids:
+  - f21
+  - f32
+  - f33
+  - f01
+  atomic_facts:
+  - Corvane Systems supplies the Relay CRM.
+  - A sync bug in the Relay CRM caused INC-0407, the April 2026 double-charge incident.
+  - The Billing Support team handled the customer contacts from INC-0407.
+  - Dan Reyes leads the Billing Support team.
+  required_docs:
+  - contract_corvane
+  - incident_inc_0407
+  - team_billing_support
+- id: q_global_1
+  shape: global_thematic
+  question: What are the recurring causes of repeat contacts and escalations across the contact centre?
+  answer: 'Three recurring causes: outdated knowledge-base (Beacon) articles, Monday-morning understaffing
+    (Pulse under-forecasts demand), and IVR callback failures.'
+  fact_ids:
+  - f31
+  - f76
+  - f70
+  - f71
+  - f72
+  - f73
+  - f74
+  - f75
+  atomic_facts:
+  - During INC-0312, IVR callback requests failed, so many customers called again.
+  - When an IVR callback fails, NETESC agents must log the case by hand.
+  - Quality Assurance found that outdated Beacon articles caused 18% of repeat contacts in Q1.
+  - In February, TECH-1 agents reported that Beacon articles about the new router were out of date, which
+    led to repeat calls.
+  - Outdated knowledge-base articles were again a top cause of escalations in April.
+  - The contact centre was understaffed on Monday mornings in February, and the service level fell to
+    61%.
+  - Sofia Marchetti says Pulse forecasts underestimate Monday-morning demand.
+  - Monday-morning understaffing continued in April, and Telvio took the overflow.
+  required_docs:
+  - incident_inc_0312
+  - plan_workforce_q2
+  - review_2026_02
+  - review_2026_05
+  - review_qa_q1
+  - runbook_netesc_queue
+- id: q_global_2
+  shape: global_thematic
+  question: What cost problem recurs across the contact centre's vendor contracts?
+  answer: 'Overage charges: VoxRoute per-minute overages (22% over budget), Corvane seat overages (15%
+    over budget), and ShiftWise forecasting-run overages. Maya Okafor asked for a review of every overage
+    clause.'
+  fact_ids:
+  - f80
+  - f81
+  - f82
+  - f83
+  atomic_facts:
+  - The VoxRoute contract ran 22% over budget because of per-minute overage charges.
+  - Corvane Systems billed seat overage charges, and the Relay CRM contract ran 15% over budget.
+  - ShiftWise added overage charges for extra Pulse forecasting runs.
+  - Maya Okafor asked CX Platforms to review every vendor overage clause.
+  required_docs:
+  - contract_corvane
+  - contract_shiftwise
+  - contract_voxroute
+  - review_2026_05
+- id: q_entity_1
+  shape: entity_gather
+  question: What do we know about Wei Lin?
+  answer: Former senior Tier 2 agent, promoted in January 2026 to lead Network Escalations; led the INC-0312
+    review; ran Tier 1 escalation training in Q1; reported a 12% drop in NETESC handle time in April.
+  fact_ids:
+  - f02
+  - f30
+  - f60
+  - f61
+  - f62
+  - f63
+  atomic_facts:
+  - Wei Lin leads the Network Escalations team.
+  - W. Lin led the post-incident review of INC-0312, the March 2026 fibre outage.
+  - Before the promotion, Lin was a senior agent in Tier 2 Technical Support.
+  - Wei Lin was promoted to lead Network Escalations in January 2026.
+  - W. Lin ran the escalation-handling training for Tier 1 agents in Q1.
+  - Wei Lin reported that NETESC handle time fell by 12% in April.
+  required_docs:
+  - announcement_wei_lin
+  - incident_inc_0312
+  - review_2026_05
+  - review_qa_q1
+  - team_network_escalations
+- id: q_entity_2
+  shape: entity_gather
+  question: What do we know about Grace Kim?
+  answer: Leads CX Platforms, which owns the vendor contracts; manages the VoxRoute contract; owns Project
+    Clearline.
+  fact_ids:
+  - f08
+  - f24
+  - f41
+  atomic_facts:
+  - Grace Kim leads CX Platforms, the team that owns the vendor contracts.
+  - Grace Kim manages the VoxRoute contract.
+  - Grace Kim owns Project Clearline.
+  required_docs:
+  - charter_clearline
+  - contract_corvane
+  - contract_voxroute
+- id: q_set_1
+  shape: set_count
+  question: How many projects or campaigns depend on the Relay CRM, and which?
+  answer: 'Three: Project Clearview, Project Keystone, and the Win-back campaign.'
+  fact_ids:
+  - f42
+  - f46
+  - f48
+  atomic_facts:
+  - Project Clearview depends on the Relay CRM for statement data.
+  - Project Keystone reads customer account data from the Relay CRM.
+  - The Win-back campaign pulls lapsed-customer lists from the Relay CRM.
+  required_docs:
+  - charter_clearview
+  - charter_keystone
+  - team_retention
+- id: q_set_2
+  shape: set_count
+  question: Which queues does the Switchboard IVR route?
+  answer: 'Three: NETESC, BILL, and TECH-1. The SAVE queue uses Switchboard Lite, not Switchboard.'
+  fact_ids:
+  - f11
+  - f12
+  - f13
+  - f14
+  atomic_facts:
+  - Calls reach the NETESC queue through the Switchboard IVR.
+  - The Switchboard IVR routes calls to the BILL queue.
+  - The Switchboard IVR routes calls to the TECH-1 queue.
+  - The SAVE queue still runs on Switchboard Lite, the legacy in-house IVR.
+  required_docs:
+  - runbook_bill_tech1_routing
+  - runbook_netesc_queue
+  - runbook_save_queue
+- id: q_absent_1
+  shape: absent_info
+  question: What were the results of the Switchboard version 3 pilot?
+  answer: The documents do not describe a Switchboard version 3 pilot. Project Clearline upgrades Switchboard
+    to version 2 only.
+  fact_ids: []
+  atomic_facts: []
+  required_docs: []
+- id: q_absent_2
+  shape: absent_info
+  question: What did Telvio's 2026 customer satisfaction audit find?
+  answer: The documents do not describe any Telvio customer satisfaction audit.
+  fact_ids: []
+  atomic_facts: []
+  required_docs: []

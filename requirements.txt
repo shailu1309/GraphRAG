@@ -1,0 +1,24 @@
+anthropic>=0.49
+sentence-transformers>=3.3
+chromadb>=0.6
+neo4j>=5.27
+networkx>=3.4
+rank-bm25>=0.2.2
+pydantic>=2.10
+python-dotenv>=1.0
+pyyaml>=6.0
+tiktoken>=0.8
+rich>=13.9
+# (sentence-transformers pulls PyTorch - expect ~2.5 GB on first install.)
+# --- LLM ---------------------------------------------------------------------
+# Anthropic SDK, for generation / entity extraction / community reports / judge.
+# --- embeddings --------------------------------------------------------------
+# Local embedding model. Runs on MPS on Apple silicon; no API calls, no cost.
+# --- vector store (baseline RAG) ---------------------------------------------
+# Persistent local vector DB for the chunk embeddings.
+# --- graph store (GraphRAG) --------------------------------------------------
+# Bolt driver for Neo4j, plus the graph library used for community detection.
+# --- retrieval ---------------------------------------------------------------
+# Sparse retrieval, for the optional hybrid baseline. Keeping the baseline
+# strong matters: beating a crippled baseline would prove nothing.
+
